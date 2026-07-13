@@ -1,0 +1,19 @@
+{
+  "name": "log-portfolio-template",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^11.1.0",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^4.16.0",
+    "htmx.org": "^1.9.12",
+    "tailwindcss": "^3.4.13"
+  }
+}

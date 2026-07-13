@@ -1,0 +1,29 @@
+---
+import { site } from "../data/config";
+---
+
+<header class="line">
+  <span class="line-no"></span>
+  <div class="line-body pt-4 sm:pt-8">
+    <p class="eyebrow mb-3">{site.role} · {site.location}</p>
+    <h1 class="font-mono font-bold text-3xl sm:text-4xl tracking-tight text-ink">
+      {site.name}<span class="cursor-blink" aria-hidden="true"></span>
+    </h1>
+    <p class="mt-4 max-w-md text-base sm:text-lg text-ink/90">
+      {site.tagline}
+    </p>
+    <p class="mt-4 max-w-md text-sm leading-relaxed text-muted">
+      {site.bio}
+    </p>
+    <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-wide">
+      <a href={site.resumeUrl} class="text-blue hover:underline underline-offset-4">
+        resume →
+      </a>
+      {site.social.map((s) => (
+        <a href={s.href} target="_blank" rel="noreferrer" class="text-muted hover:text-ink transition-colors">
+          {s.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>

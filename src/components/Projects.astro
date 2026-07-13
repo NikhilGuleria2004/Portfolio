@@ -1,0 +1,16 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { renderProjects } from "../lib/renderProjects";
+
+const initialHtml = renderProjects("all");
+---
+
+<section aria-labelledby="projects-heading">
+  <SectionHeading label="projects" />
+  <div class="line">
+    <span class="line-no"></span>
+    <div class="line-body">
+      <div id="project-list" class="grid sm:grid-cols-2 gap-3" set:html={initialHtml} />
+    </div>
+  </div>
+</section>

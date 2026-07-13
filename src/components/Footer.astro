@@ -1,0 +1,13 @@
+---
+import { site } from "../data/config";
+const year = new Date().getFullYear();
+---
+
+<footer class="line pb-2">
+  <span class="line-no"></span>
+  <div class="line-body rule pt-2">
+    <p class="font-mono text-xs text-muted">
+      © {year} {site.name}. Built with Astro, Tailwind &amp; HTMX.
+    </p>
+  </div>
+</footer>

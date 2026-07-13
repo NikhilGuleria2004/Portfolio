@@ -1,0 +1,22 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { education } from "../data/config";
+---
+
+<section aria-labelledby="education-heading">
+  <SectionHeading label="education" />
+  {education.map((entry) => (
+    <div class="line">
+      <span class="line-no"></span>
+      <div class="line-body pb-3">
+        <div class="flex flex-wrap items-baseline gap-x-3">
+          <span class="font-mono text-xs text-red">{entry.period}</span>
+          <h3 class="font-mono font-medium text-ink">{entry.school}</h3>
+        </div>
+        <p class="mt-1.5 max-w-md text-sm leading-relaxed text-muted">
+          {entry.detail}
+        </p>
+      </div>
+    </div>
+  ))}
+</section>

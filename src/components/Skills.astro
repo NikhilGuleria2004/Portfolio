@@ -1,0 +1,18 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { skills } from "../data/config";
+---
+
+<section aria-labelledby="skills-heading">
+  <SectionHeading label="skills" />
+  <div class="line">
+    <span class="line-no"></span>
+    <div class="line-body pb-2">
+      <div class="flex flex-wrap gap-1.5">
+        {skills.map((skill) => (
+          <span class="tag">{skill}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { site } from "../data/config";
+---
+
+<section aria-labelledby="contact-heading">
+  <SectionHeading label="contact" />
+  <div class="line">
+    <span class="line-no"></span>
+    <div class="line-body pb-3">
+      <p class="max-w-md text-xs leading-relaxed text-muted mb-3">
+        Have a role, a project, or a bug in one of the above — my inbox is open.
+        Or just email <a href={`mailto:${site.email}`} class="text-blue hover:underline">{site.email}</a> directly.
+      </p>
+
+      <!--
+        HTMX form: posts to the Astro API route below and swaps its own
+        wrapper with whatever the server returns (a success message),
+        with no client JS and no page reload.
+      -->
+      <form
+        id="contact-form"
+        hx-post="/api/contact"
+        hx-target="#contact-form-wrapper"
+        hx-swap="outerHTML"
+        class="max-w-md space-y-2"
+      >
+        <div id="contact-form-wrapper" class="space-y-2">
+          <div>
+            <label for="name" class="eyebrow block mb-0.5 text-[0.65rem]">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="w-full bg-paper border border-rule rounded-sm px-2.5 py-1 text-xs text-ink placeholder:text-muted/60 focus:border-blue outline-none"
+              placeholder="Jane Doe"
+            />
+          </div>
+          <div>
+            <label for="email" class="eyebrow block mb-0.5 text-[0.65rem]">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full bg-paper border border-rule rounded-sm px-2.5 py-1 text-xs text-ink placeholder:text-muted/60 focus:border-blue outline-none"
+              placeholder="jane@company.com"
+            />
+          </div>
+          <div>
+            <label for="message" class="eyebrow block mb-0.5 text-[0.65rem]">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="2"
+              class="w-full bg-paper border border-rule rounded-sm px-2.5 py-1 text-xs text-ink placeholder:text-muted/60 focus:border-blue outline-none resize-none"
+              placeholder="What's on your mind?"></textarea>
+          </div>
+          <button
+            type="submit"
+            class="font-mono text-[0.65rem] uppercase tracking-wide px-3 py-1.5 border border-ink text-ink hover:bg-ink hover:text-paper transition-colors rounded-sm"
+          >
+            Send message →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

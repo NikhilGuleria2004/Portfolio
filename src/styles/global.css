@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    background-image:none;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-blue;
+  }
+
+  ::selection {
+    @apply bg-blue text-paper;
+  }
+}
+
+@layer components {
+  /* The signature element: every top-level block is a numbered "line",
+     like a code editor gutter, running the length of the page. */
+  .line {@apply block relative;}
+
+  .line-no {display:none;}
+
+  .line-no::before {
+    content: counter(line, decimal-leading-zero);
+  }
+
+  .line-body {@apply px-0;}
+
+  .gutter-count {
+    counter-reset: line;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.18em] text-muted;
+  }
+
+  .rule {
+    @apply border-t border-rule;
+  }
+
+  .tag {
+    @apply font-mono text-[0.7rem] uppercase tracking-wide text-muted border border-rule rounded-sm px-1.5 py-0.5;
+  }
+
+  .cursor-blink {
+    @apply inline-block w-[0.55ch] h-[1em] bg-red align-[-0.15em];
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink {
+      animation: none;
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbars for a clean, minimal dashboard feel */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D3CCB8; /* matching Tailwind's border color (rule) */
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B6558; /* matching Tailwind's text-muted color */
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D3CCB8 transparent;
+}

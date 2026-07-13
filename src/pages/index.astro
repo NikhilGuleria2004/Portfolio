@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import Education from "../components/Education.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+
+export const prerender = true;
+---
+<Layout>
+<main class="max-w-7xl mx-auto px-6 py-4 sm:py-6 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-[auto_1fr_auto] lg:h-screen lg:max-h-screen lg:overflow-hidden">
+  <!-- Hero -->
+  <div class="order-1 lg:col-span-2 lg:row-start-1 lg:col-start-1">
+    <Hero />
+  </div>
+
+  <!-- Contact -->
+  <div class="order-5 lg:col-span-1 lg:row-start-1 lg:col-start-3">
+    <Contact />
+  </div>
+
+  <!-- Projects -->
+  <div class="order-3 lg:col-span-1 lg:row-start-2 lg:col-start-1 lg:h-full lg:overflow-y-auto lg:min-h-0 pr-2">
+    <Projects />
+  </div>
+
+  <!-- Experience -->
+  <div class="order-2 lg:col-span-1 lg:row-start-2 lg:col-start-2 lg:h-full lg:overflow-y-auto lg:min-h-0 pr-2">
+    <Experience />
+  </div>
+
+  <!-- Education & Skills -->
+  <div class="order-4 lg:col-span-1 lg:row-start-2 lg:col-start-3 lg:h-full lg:overflow-y-auto lg:min-h-0 pr-2 flex flex-col gap-4">
+    <Education />
+    <Skills />
+  </div>
+
+  <!-- Footer -->
+  <div class="order-6 lg:col-span-3 lg:row-start-3 lg:col-start-1">
+    <Footer />
+  </div>
+</main>
+</Layout>

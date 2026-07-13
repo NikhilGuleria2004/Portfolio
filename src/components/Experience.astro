@@ -1,0 +1,23 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { experience } from "../data/config";
+---
+
+<section aria-labelledby="experience-heading">
+  <SectionHeading label="experience" />
+  {experience.map((job) => (
+    <div class="line">
+      <span class="line-no"></span>
+      <div class="line-body pb-3">
+        <div class="flex flex-wrap items-baseline gap-x-3">
+          <span class="font-mono text-xs text-red">{job.period}</span>
+          <h3 class="font-mono font-medium text-ink">{job.role}</h3>
+          <span class="text-muted text-sm">· {job.org}</span>
+        </div>
+        <p class="mt-1.5 max-w-md text-sm leading-relaxed text-muted">
+          {job.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</section>
