@@ -4,14 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: "#EDE9DC",
-        "paper-dim": "#E3DECC",
-        ink: "#1C1B18",
-        muted: "#6B6558",
-        rule: "#D3CCB8",
-        blue: "#24438C",
-        red: "#B23A2E",
-      },
+  paper: "#2B2517",
+  "paper-dim": "#332C1D",
+
+  ink: "#E5DCC8",
+
+  muted: "#B4A98F",
+
+  rule: "#5B5242",
+
+  blue: "#7DA8FF",
+
+  red: "#D86D4A",
+},
       fontFamily: {
         mono: ["'JetBrains Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
         sans: ["'Inter'", "ui-sans-serif", "system-ui", "sans-serif"],

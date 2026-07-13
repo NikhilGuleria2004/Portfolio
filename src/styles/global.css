@@ -86,12 +86,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D3CCB8; /* matching Tailwind's border color (rule) */
-  border-radius: 9999px;
+  background: #5B5242;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B6558; /* matching Tailwind's text-muted color */
+  background: #7A705C;
+}
+
+* {
+  scrollbar-color: #5B5242 transparent;
 }
 
 /* Firefox scrollbar support */
